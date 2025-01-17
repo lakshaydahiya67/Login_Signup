@@ -3,33 +3,42 @@
 <html>
 <head>
     <title>Sign Up Form</title>
+    <!-- Load external JavaScript file -->
     <script src="{% static 'js/static.js' %}"></script>
+    <!-- Load external CSS file -->
     <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 <body>
 
     <div class="signup-box">
         <h2>Sign Up</h2>
+        <!-- Sign up form -->
         <form action="/signup/" method="POST">
             {% csrf_token %}
+            <!-- Full Name input field -->
             <div class="input-group">
                 <label for="fullname">Full Name</label>
                 <input type="text" id="fullname" name="fullname" required>
             </div>
+            <!-- Email input field -->
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
+            <!-- Username input field -->
             <div class="input-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
             </div>
+            <!-- Password input field -->
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
+            <!-- Submit button -->
             <button type="submit" class="signup-button">Sign Up</button>
         </form>
+        <!-- Link to login page -->
         <div class="link-row">
             <a href="{% url 'login' %}">Back to Login</a>
         </div>
